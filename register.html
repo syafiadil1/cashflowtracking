@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="register">
+  <header class="site-header">
+    <div class="container">
+      <h1>Company Financial Behavior Analysis & Advisory System</h1>
+      <p>Register Page</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="container nav-row">
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="register.html" class="active">Register</a>
+      <a href="listing.html">Transaction Listing</a>
+      <a href="add-transaction.html">Add Transaction</a>
+      <a href="dashboard.html">Dashboard</a>
+      <span id="auth-status" class="auth-status"></span>
+    </div>
+  </nav>
+
+  <main class="container page-section">
+    <section class="simple-card">
+      <h2>User Registration</h2>
+      <form id="register-form" class="form-grid">
+        <div class="field">
+          <label for="register-name">Full Name</label>
+          <input id="register-name" name="name" type="text" placeholder="Enter full name" required>
+        </div>
+        <div class="field">
+          <label for="register-email">Email</label>
+          <input id="register-email" name="email" type="email" placeholder="Enter email" required>
+        </div>
+        <div class="field">
+          <label for="register-password">Password</label>
+          <input id="register-password" name="password" type="password" placeholder="Create password" required>
+        </div>
+        <div class="field">
+          <label for="register-role">Role</label>
+          <select id="register-role" name="role">
+            <option>User</option>
+            <option>Admin</option>
+          </select>
+        </div>
+        <div class="full-width">
+          <button class="submit-btn" type="submit">Register</button>
+        </div>
+      </form>
+      <p id="register-message" class="info-text"></p>
+    </section>
+  </main>
+
+  <script type="module" src="assets/js/register.js"></script>
+</body>
+</html>

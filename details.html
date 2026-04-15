@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaction Details</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="details">
+  <header class="site-header">
+    <div class="container">
+      <h1>Company Financial Behavior Analysis & Advisory System</h1>
+      <p>Transaction Details Page</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="container nav-row">
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+      <a href="listing.html">Transaction Listing</a>
+      <a href="add-transaction.html">Add Transaction</a>
+      <a href="dashboard.html">Dashboard</a>
+      <span id="auth-status" class="auth-status"></span>
+    </div>
+  </nav>
+
+  <main class="container page-section">
+    <section class="simple-card">
+      <h2>Transaction Details</h2>
+      <p>This page displays one selected transaction and shows OCR text plus detected category.</p>
+    </section>
+
+    <section id="details-container" class="details-grid"></section>
+  </main>
+
+  <script type="module" src="assets/js/details.js"></script>
+</body>
+</html>

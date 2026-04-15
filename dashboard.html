@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="dashboard">
+  <header class="site-header">
+    <div class="container">
+      <h1>Company Financial Behavior Analysis & Advisory System</h1>
+      <p>Risk Detection and AI Advisory Dashboard</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="container nav-row">
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+      <a href="listing.html">Transaction Listing</a>
+      <a href="add-transaction.html">Add Transaction</a>
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <span id="auth-status" class="auth-status"></span>
+    </div>
+  </nav>
+
+  <main class="container page-section">
+    <section class="simple-card">
+      <h2>Dashboard</h2>
+      <p>This page summarizes company financial condition, monthly cashflow trend, forecast result, and AI-generated advice.</p>
+    </section>
+
+    <section class="summary-grid" id="dashboard-stats"></section>
+
+    <section class="dashboard-grid">
+      <article class="simple-card">
+        <h3>Monthly Cashflow Trend</h3>
+        <div id="cashflow-chart" class="chart-list"></div>
+      </article>
+
+      <article class="simple-card">
+        <h3>Risk Detection Result</h3>
+        <div id="risk-panel"></div>
+      </article>
+
+      <article class="simple-card">
+        <h3>Cashflow Forecast</h3>
+        <div id="forecast-panel"></div>
+      </article>
+
+      <article class="simple-card">
+        <div class="section-top">
+          <h3>AI Expense-Cut Advice</h3>
+          <button class="button-secondary" id="refresh-advice-btn" type="button">Refresh Advice</button>
+        </div>
+        <div id="advice-panel"></div>
+      </article>
+    </section>
+  </main>
+
+  <script type="module" src="assets/js/dashboard.js"></script>
+</body>
+</html>

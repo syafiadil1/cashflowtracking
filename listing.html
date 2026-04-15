@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaction Listing</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="listing">
+  <header class="site-header">
+    <div class="container">
+      <h1>Company Financial Behavior Analysis & Advisory System</h1>
+      <p>Finance & Commerce Theme</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="container nav-row">
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+      <a href="listing.html" class="active">Transaction Listing</a>
+      <a href="add-transaction.html">Add Transaction</a>
+      <a href="dashboard.html">Dashboard</a>
+      <span id="auth-status" class="auth-status"></span>
+    </div>
+  </nav>
+
+  <main class="container page-section">
+    <section class="simple-card">
+      <h2>Transaction Listing</h2>
+      <p>This page shows all recorded income, expense, and miscellaneous transactions including detected category from invoice text.</p>
+    </section>
+
+    <section class="simple-card filters-row">
+      <div class="field">
+        <label for="type-filter">Type</label>
+        <select id="type-filter">
+          <option value="all">All</option>
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+          <option value="miscellaneous">Miscellaneous</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="category-filter">Category</label>
+        <select id="category-filter">
+          <option value="all">All Categories</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="month-filter">Month</label>
+        <select id="month-filter">
+          <option value="all">All Months</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="summary-grid" id="listing-summary"></section>
+
+    <section class="simple-card">
+      <div class="section-top">
+        <h3>Registered Transactions</h3>
+        <a class="button-link" href="add-transaction.html">Add New Transaction</a>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Type</th>
+              <th>Category</th>
+              <th>Amount</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="transaction-table-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="assets/js/listing.js"></script>
+</body>
+</html>

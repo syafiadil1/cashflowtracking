@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Transaction</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="add">
+  <header class="site-header">
+    <div class="container">
+      <h1>Company Financial Behavior Analysis & Advisory System</h1>
+      <p>Add Transaction Page</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="container nav-row">
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+      <a href="listing.html">Transaction Listing</a>
+      <a href="add-transaction.html" class="active">Add Transaction</a>
+      <a href="dashboard.html">Dashboard</a>
+      <span id="auth-status" class="auth-status"></span>
+    </div>
+  </nav>
+
+  <main class="container page-section">
+    <section class="simple-card">
+      <h2>Register New Transaction</h2>
+      <p>Student version: user can manually fill in data and paste OCR text from invoice image or PDF.</p>
+      <form id="transaction-form" class="form-grid">
+        <div class="field">
+          <label for="txn-date">Date</label>
+          <input id="txn-date" name="date" type="date" required>
+        </div>
+
+        <div class="field">
+          <label for="txn-type">Type</label>
+          <select id="txn-type" name="type" required>
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+            <option value="miscellaneous">Miscellaneous</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="txn-desc">Description</label>
+          <input id="txn-desc" name="description" type="text" required>
+        </div>
+
+        <div class="field">
+          <label for="txn-amount">Amount</label>
+          <input id="txn-amount" name="amount" type="number" min="0" step="0.01" required>
+        </div>
+
+        <div class="field">
+          <label for="txn-vendor">Vendor / Source</label>
+          <input id="txn-vendor" name="vendor" type="text">
+        </div>
+
+        <div class="field">
+          <label for="txn-file">Invoice Image / PDF</label>
+          <input id="txn-file" type="file" accept=".jpg,.jpeg,.png,.pdf">
+        </div>
+
+        <div class="field full-width">
+          <label for="txn-invoice-text">Extracted OCR Text / Notes</label>
+          <textarea id="txn-invoice-text" name="invoiceText" rows="5" placeholder="Example: food lunch cafe receipt..."></textarea>
+        </div>
+
+        <div class="full-width">
+          <button class="submit-btn" type="submit">Save Transaction</button>
+        </div>
+      </form>
+      <p id="form-message" class="info-text"></p>
+    </section>
+  </main>
+
+  <script type="module" src="assets/js/add-transaction.js"></script>
+</body>
+</html>
