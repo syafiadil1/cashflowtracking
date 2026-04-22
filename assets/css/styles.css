@@ -15,6 +15,7 @@
   --card-background: #ffffff;
   --text-primary: #1e293b;
   --text-secondary: #64748b;
+  --text-muted: #94a3b8;
   --border-color: #e2e8f0;
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -50,7 +51,11 @@ body {
 }
 
 .page-section {
-  padding: 32px 0 48px;
+  padding: 40px 0 60px;
+}
+
+.section-spacer {
+  margin-bottom: 32px;
 }
 
 /* ========================================
@@ -60,21 +65,22 @@ body {
 .site-header {
   background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
   color: white;
-  padding: 28px 0;
+  padding: 32px 0;
   box-shadow: var(--shadow-md);
 }
 
 .site-header h1 {
   margin: 0 0 8px;
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 600;
   letter-spacing: -0.02em;
+  line-height: 1.3;
 }
 
 .site-header p {
   margin: 0;
-  opacity: 0.9;
-  font-size: 14px;
+  opacity: 0.95;
+  font-size: 15px;
   font-weight: 400;
 }
 
@@ -95,7 +101,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  padding: 14px 0;
+  padding: 16px 0;
   align-items: center;
 }
 
@@ -108,6 +114,7 @@ body {
   font-weight: 500;
   transition: var(--transition);
   position: relative;
+  white-space: nowrap;
 }
 
 .site-nav a:hover {
@@ -142,8 +149,8 @@ body {
   background-color: var(--card-background);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 24px;
-  margin-bottom: 24px;
+  padding: 28px;
+  margin-bottom: 28px;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
 }
@@ -153,33 +160,50 @@ body {
 }
 
 .simple-card h2 {
-  margin: 0 0 16px;
-  font-size: 22px;
+  margin: 0 0 12px;
+  font-size: 24px;
   font-weight: 600;
   color: var(--text-primary);
+  letter-spacing: -0.01em;
 }
 
 .simple-card h3 {
-  margin: 0 0 12px;
+  margin: 0 0 16px;
   font-size: 18px;
   font-weight: 600;
   color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.simple-card > p {
+  margin: 0 0 8px;
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 .hero {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
-  gap: 24px;
+  gap: 28px;
 }
 
 .hero ul {
-  margin: 12px 0 0;
+  margin: 16px 0 0;
   padding-left: 20px;
 }
 
 .hero li {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Card Section Dividers */
+.card-section {
+  padding-top: 24px;
+  margin-top: 24px;
+  border-top: 1px solid var(--border-color);
 }
 
 /* ========================================
@@ -190,14 +214,14 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .summary-box {
   background-color: var(--card-background);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 20px;
+  padding: 24px;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
 }
@@ -212,15 +236,16 @@ body {
   font-size: 12px;
   color: var(--text-secondary);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: 500;
+  letter-spacing: 0.08em;
+  font-weight: 600;
 }
 
 .summary-box h3 {
-  margin: 8px 0 0;
-  font-size: 20px;
-  font-weight: 600;
+  margin: 10px 0 0;
+  font-size: 24px;
+  font-weight: 700;
   color: var(--text-primary);
+  letter-spacing: -0.02em;
 }
 
 /* ========================================
@@ -235,14 +260,15 @@ body {
 
 .field label {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-primary);
+  letter-spacing: 0.01em;
 }
 
 .field input,
 .field select,
 .field textarea {
-  padding: 12px 14px;
+  padding: 12px 16px;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   font-size: 14px;
@@ -261,25 +287,25 @@ body {
 
 .field input::placeholder,
 .field textarea::placeholder {
-  color: var(--text-secondary);
+  color: var(--text-muted);
 }
 
 .form-grid {
   display: grid;
-  gap: 16px;
+  gap: 20px;
   grid-template-columns: repeat(2, 1fr);
 }
 
 .filters-row {
   display: grid;
-  gap: 16px;
+  gap: 20px;
   grid-template-columns: repeat(3, 1fr);
 }
 
 .details-grid,
 .dashboard-grid {
   display: grid;
-  gap: 16px;
+  gap: 24px;
   grid-template-columns: repeat(2, 1fr);
 }
 
@@ -295,15 +321,16 @@ body {
 .button-secondary,
 .submit-btn {
   display: inline-block;
-  padding: 12px 20px;
+  padding: 12px 24px;
   border: none;
   border-radius: var(--radius-md);
   text-decoration: none;
   cursor: pointer;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   transition: var(--transition);
   text-align: center;
+  line-height: 1.4;
 }
 
 .button-link,
@@ -330,6 +357,13 @@ body {
   background-color: var(--border-color);
 }
 
+/* Button Group */
+.button-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
 /* ========================================
    TABLES
    ======================================== */
@@ -339,7 +373,9 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .table-wrap {
@@ -359,9 +395,9 @@ th,
 td {
   border: none;
   border-bottom: 1px solid var(--border-color);
-  padding: 14px 16px;
+  padding: 16px;
   text-align: left;
-  vertical-align: top;
+  vertical-align: middle;
   font-size: 14px;
 }
 
@@ -371,7 +407,8 @@ th {
   color: var(--text-secondary);
   text-transform: uppercase;
   font-size: 12px;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
 }
 
 tr:last-child td {
@@ -382,19 +419,32 @@ tr:hover td {
   background-color: var(--background-color);
 }
 
+/* Table Actions */
+.table-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.table-actions button,
+.table-actions a {
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
 /* ========================================
    BADGES
    ======================================== */
 
 .badge {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 6px 14px;
   border-radius: 20px;
   color: white;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
 }
 
 .badge-income {
@@ -414,9 +464,10 @@ tr:hover td {
    ======================================== */
 
 .status-box {
-  padding: 16px;
+  padding: 18px;
   border-radius: var(--radius-md);
   border: 1px solid;
+  margin-bottom: 16px;
 }
 
 .safe {
@@ -448,7 +499,7 @@ tr:hover td {
   border: 1px solid var(--border-color);
   background-color: var(--card-background);
   border-radius: var(--radius-lg);
-  padding: 16px;
+  padding: 20px;
   margin-bottom: 16px;
   box-shadow: var(--shadow-sm);
 }
@@ -456,7 +507,7 @@ tr:hover td {
 .bar {
   height: 12px;
   background-color: var(--primary-light);
-  margin-top: 8px;
+  margin-top: 10px;
   border-radius: 6px;
   overflow: hidden;
 }
@@ -471,6 +522,19 @@ tr:hover td {
 .info-text {
   color: var(--text-secondary);
   font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--text-muted);
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 15px;
 }
 
 /* ========================================
@@ -490,6 +554,7 @@ tr:hover td {
   .section-top {
     flex-direction: column;
     align-items: flex-start;
+    gap: 12px;
   }
 
   .nav-row {
@@ -503,7 +568,20 @@ tr:hover td {
 
   .auth-status {
     width: 100%;
-    margin-top: 8px;
+    margin-top: 12px;
     justify-content: center;
+  }
+
+  .simple-card {
+    padding: 20px;
+  }
+
+  .summary-box {
+    padding: 20px;
+  }
+
+  th,
+  td {
+    padding: 12px;
   }
 }
